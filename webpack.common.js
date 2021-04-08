@@ -10,7 +10,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/client/views/index.html",
       filename: "./index.html",
-      // minify: false, //disable for production
+      minify: false, //disable for production
     }),
   ],
   module: {

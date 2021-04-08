@@ -16,7 +16,20 @@ app.use(bodyParser.json());
 const cors = require('cors');
 app.use(cors());
 // Initialize the main project folder
-app.use(express.static('src'));
+app.use(express.static('dist'))
+
+// console.log(__dirname)
+
+app.get('/', function (req, res) {
+    // res.sendFile('dist/index.html')
+    res.sendFile(path.resolve('src/client/views/index.html'))
+})
+
+
+app.get('/', function (req, res) {
+    res.sendFile('dist/index.html')
+    //res.sendFile(path.resolve('src/client/views/index.html'))
+})
 
 
 app.get('/all', (req, res)=> {
