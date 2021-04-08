@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip Planner</title>
+    
+<script defer src="app.bundle.js"></script></head>
+<body>
+    <div class="layout-container">
+        <div class="section-header">
+            <h1>Trip Scheduler</h1>
+        </div>
+
+        
+        <form onsubmit="Client.handleSubmit(event)" class=" layout-grid layout-grid-col">
+            <div>
+                <label for="city">Enter City</label>
+                <input type="text" name="city" id="city" required>
+            </div>
+            <div>
+                <label for="Start Date">Start Date</label>
+                <input type="date" name="startDate" id="startDate" required>
+            </div>
+            <div>
+                <label for="End Date">End Date</label>
+                <input type="date" name="endDate" id="endDate" required>
+            </div>
+            <!-- <button type="submit" onclick="return handleSubmit(event)" onsubmit="return handleSubmit(event)">Submit</button> -->
+            <button type="submit" onsubmit="Client.handleSubmit(event)" class="button button-primary button-normal">Save Trip</button>
+        </form>
+    </div>
+    <div class="layout-container">
+        <div id="trip" class="layout-grid layout-grid-col">
+            <!-- <div class="card">
+                <img src="https://cdn.pixabay.com/photo/2015/03/26/09/39/woman-690034_960_720.jpg" class="card--img" alt="${data.city}, ${data.country} lazyload">
+                <h2 class="card--title">My trip to: Nairobi, Kenya <br> Departing: 22.01.20</h2>
+                <p>Nairobi trip is 33 days away</p>
+                <p>Typical Weather for there is <br> Highs: 100 and Lows:200 <br>Mostly Sunny and Cloudy </p>
+            </div> -->
+           
+        </div>
+    </div>
+</body>
+</html>
