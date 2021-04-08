@@ -8,7 +8,7 @@ function handleSubmit(event){
 
     Client.geonamesData(city)        
     .then(data=>{
-        let weather = {}
+        let weatherData = {}
         let photo;              
  
         Client.init = () => {
@@ -20,15 +20,15 @@ function handleSubmit(event){
                 dateStart:startDate, 
                 dateEnd:endDate, 
                 date: daysRemaining,
-                high: weather.high_temp,
-                low: weather.low_temp,
-                weather: weather.weather.description,
+                high: weatherData.high_temp,
+                low: weatherData.low_temp,
+                weather: weatherData.weather?.description,
                 imgURL: photo                
             })
             Client.addData()
         }
         Client.weatherbitData(data.lat, data.lng).then(result =>{
-            weather = result
+            weatherData = result
             Client.init()
         })
         Client.pixabayData(data.name).then(result =>{

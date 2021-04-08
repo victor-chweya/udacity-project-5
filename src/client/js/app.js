@@ -25,7 +25,7 @@ const weatherbitData = async (lat,lng)=>{
     const response = await fetch(weatherbitUrl + 'lat='+ lat+ '&lon='+ lng + '&key=' + weatherbitApiKey)
     const data = await response.json()
     dataObj = data.data[0]
-    console.log(dataObj)
+    // console.log(dataObj)
     return dataObj
 }
 
