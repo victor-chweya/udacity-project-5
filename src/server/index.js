@@ -35,6 +35,7 @@ app.get('/', function (req, res) {
 app.get('/all', (req, res)=> {
     // res.json(booksApi)
     // console.log(booksApi)
+    res.send(projectData)
     console.log(projectData)
 })
 app.post('/addData', (req,res)=> {
@@ -48,6 +49,6 @@ app.post('/addData', (req,res)=> {
 
 //spin up server
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
+    console.log(`Trip Planner app listening at http://localhost:${port}`)
 })
 
