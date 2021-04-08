@@ -97,7 +97,7 @@ const pixabayData = async (city, country)=>{
   
 }
 const postData = async(data = {}) =>{
-      const response = await fetch('/all', {
+      const response = await fetch('/addData', {
       method: 'POST', 
       credentials: 'same-origin',
       headers: {
