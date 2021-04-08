@@ -1,0 +1,255 @@
+
+:root {
+    /* COLOR */
+    --color-1: #01A187;
+    --color-2: #E85706;
+    --color-3: #412410;
+    --color-4: #F9F5E8;
+    --color-5: #481C75;
+
+    /* LAYOUT */
+    --layout-container: 1.25rem;
+    --layout-grid     : 3.625rem;
+    --layout-gutter   : 1rem;
+  
+    /* GAP */  
+    --gap-cta    : .75rem;
+    --gap-hero   : 2rem;
+    --gap-feature: 2rem;
+    --gap-card   : 1.25rem;
+  
+    /* BORDER RADIUS */    
+    --border-radius: 5rem;
+    --border-radius-card  : .5rem;
+
+    /* TYPOGRAPHY */
+    --typography-sans: 'bobby_jones_softregular','arial', sans-serif;
+  
+}
+@font-face {
+    font-family: 'bobby_jones_softregular';
+    src: url('../fonts/bobby_jones_soft-webfont.woff2') format('woff2'),
+         url('../fonts/bobby_jones_soft-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/* DEFAULTS */
+html { 
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*,*:before,*:after { 
+    box-sizing: inherit; 
+}
+
+body {
+    background-color: var(--color-4);
+    color: var(--color-3);
+    letter-spacing: 2px;
+    font-family: var(--typography-sans);
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin: 0 auto;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: var(--color-5);
+    text-decoration: none;
+}
+h1, h2, h3, h4, p {
+    margin-top: 0;
+    font-weight: normal;
+}
+h1, h2 {
+    margin-bottom:.75rem;
+}
+h1 {
+  font-size: 1.9375;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 3rem;;
+  line-height: 1.2;
+  color: #E85706;
+}
+
+h4 {
+  font-size: 2rem;
+  line-height: 1.25;
+  color: #01A187;
+}
+
+p { 
+    margin-bottom: 1.125rem; 
+}
+
+p:last-child { 
+    margin-bottom: 0; 
+}
+
+strong { 
+    font-weight: 700; 
+}
+
+small { 
+    font-size: .8125rem; 
+}
+
+img,
+svg {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+/* LAYOUT */
+.layout-container {
+  padding-left: var(--layout-container);
+  padding-right: var(--layout-container);
+  max-width: 1140px;
+  margin: 0 auto;
+}
+.layout-flex{
+  align-items: center;
+  justify-content: center;
+}
+
+.layout-flex { 
+    display: flex; 
+}
+.layout-flex__column{
+    flex-direction: column;
+}
+.layout-grid { 
+    display: grid;    
+}
+
+.layout-grid-col{
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 1rem;
+}
+.no-grid-gap{   
+    grid-gap: 0;
+}
+/* BUTTON */
+.button {
+  border: .0625rem solid var(--color-2);
+  border-radius: var(--border-radius);
+  display: block;
+  line-height: 1;
+  text-align: center;
+}
+
+.button-primary {
+  background-color: var(--color-2);
+  color: var(--color-4);
+}
+
+.button-normal {
+  padding: .85rem 2rem .85rem;
+  width: fit-content;
+}
+
+.button-small {
+  font-size: var(--ui-typography-s);
+  padding: .5rem .75rem .5625rem;
+}
+.section-heading{
+    margin-bottom: 5rem;
+}
+/* HEADER */
+.section-header {
+  padding-bottom: 1.25rem;
+  padding-top: 1.25rem;
+}
+.nav-item{
+    padding:0.5rem;
+}
+
+.section-header__layout { 
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+/* HERO */
+.section-hero {
+    padding-bottom: 5rem;
+    padding-top: 5rem;
+    text-align: center;
+    height: 100%;
+    background: url("../img/background-img.png") no-repeat center;
+    background-size: cover;
+}
+.section-hero--logo{
+    height: 250px;
+    margin-bottom: 1rem;
+}
+.cta-text{
+  font-size: 2rem;
+}
+/* SPECIALS*/
+.section-specials{
+    text-align: center;
+    padding-bottom: 7rem;
+    padding-top: 7rem;
+}
+.card--img, .about-img{    
+    border: 3px dashed var(--color-2);
+    border-radius: 100%;
+    padding: 1rem;
+    max-height: 18rem;
+    margin-bottom: 2rem;
+}
+.card--title{
+    margin-bottom: 1rem;
+}
+.card--pricing{
+    font-size: 1.75rem;
+}
+/* ABOUT*/
+.section-about{
+    padding-bottom: 7rem;
+    padding-top: 7rem;
+    background: #ffffff;
+}
+.about-img {
+    max-height: 26rem;
+}
+/* MENU */
+.section-menu{
+    padding-bottom: 7rem;
+    padding-top: 7rem;
+    text-align: center;
+}
+.menu-list {
+    list-style: none;
+    padding-left: 0;
+}
+.menu-list__item{
+    margin-bottom: 1rem;
+}
+
+/* GALLERY */
+.gallery-img{
+    /* max-width: 320px; */
+}
+/* CONTACT */
+.section-contact{
+    text-align: center;
+    padding-bottom: 7rem;
+    padding-top: 7rem;    
+}
+.section-footer{
+    background: var(--color-3);
+    color: var(--color-4);
+    padding-bottom: 1.25rem;
+    padding-top: 1.25rem;
+    text-align: center;
+
+}
