@@ -22,14 +22,7 @@ function handleSubmit(event){
         let weather = {}
         let photo;
 
-        weatherbitData(data.lat, data.lng).then(result =>{
-            weather = result
-            init()
-        })
-        pixabayData(data.name, data.countryName).then(result =>{
-            photo = result
-            init()
-        })       
+              
  
         init = () => {
             postData({
@@ -46,7 +39,15 @@ function handleSubmit(event){
                 imgURL: photo                
             })
             addData()
-        }   
+        }
+        weatherbitData(data.lat, data.lng).then(result =>{
+            weather = result
+            init()
+        })
+        pixabayData(data.name).then(result =>{
+            photo = result
+            init()
+        })   
     })
     
 }
@@ -83,15 +84,15 @@ const weatherbitData = async (lat,lng)=>{
 
 const pixabayData = async (city, country)=>{
     let dataObj;
-    const response = await fetch(pixabayUrl + pixabayApiKey + '&q=' + encodeURIComponent(city)+ encodeURIComponent(country)+'&image_type=photo&pretty=true')
+    const response = await fetch(pixabayUrl + pixabayApiKey + '&q=' + encodeURIComponent(city) +'&image_type=photo&pretty=true')
     const data = await response.json()
     if (parseInt(data.totalHits) > 0){
         dataObj = data.hits[0]
         //console.log(dataObj.previewURL)       
-        return dataObj.previewURL
+        return dataObj.webformatURL
     } 
 	else{
-        return('https://cdn.pixabay.com/photo/2015/03/26/09/39/woman-690034_960_720.jpg');
+        return('https://cdn.pixabay.com/photo/2015/09/02/12/33/books-918521_960_720.jpg')
     }   
   
 }
@@ -121,10 +122,10 @@ const addData = async () => {
     let html = ''
     data.forEach(data => {
         let htmlSegment = `<div class="card">
-                            <img src="${data.imgURL}" class="card-img" alt="${data.city}, ${data.country} lazyload">
-                            <h2>My trip to: ${data.city}, ${data.country} <br> Departing: ${data.dateStart}</h2>
+                            <img src="${data.imgURL}" class="card--img" alt="${data.city}, ${data.country} lazyload">
+                            <h2 class="card--title">My trip to: ${data.city}, ${data.country} <br> Departing: ${data.dateStart}</h2>
                             <div>${data.city} trip is ${data.date} days away</div>
-                            <div>Typical Weather for there is <br> Highs: ${data.high} and Lows:${data.low} <br>Mostly ${data.weather} </div>
+                            <div>Typical Weather for there is <br> Highs: <strong>${data.high}</strong> and Lows:<strong>${data.low}</strong> <br>Mostly ${data.weather} </div>
                         </div>`;
         html += htmlSegment;
     })
