@@ -1,5 +1,5 @@
 const postData = async(data = {}) =>{
-    const response = await fetch('/addData', {
+    const response = await fetch('/all', {
     method: 'POST', 
     credentials: 'same-origin',
     headers: {

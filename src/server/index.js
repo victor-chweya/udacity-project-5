@@ -38,7 +38,7 @@ app.get('/all', (req, res)=> {
     res.send(projectData)
     console.log(projectData)
 })
-app.post('/addData', (req,res)=> {
+app.post('/all', (req,res)=> {
     const incomingData = req.body;
     console.log(incomingData)
     projectData.push(incomingData)
